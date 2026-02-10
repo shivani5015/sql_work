@@ -1,0 +1,28 @@
+#cursorrrr
+
+begin 
+    dbms_output.put_line('inside begin');
+    delete from emp_cp where employee_id<103;
+    dbms_output.put_line(sql%rowcount);
+
+ end;  
+ */
+ /*
+DECLARE
+    -- Define the cursor
+    CURSOR emp_cur IS SELECT * FROM emp_cp;
+    -- Define a record variable based on the table structure
+    emp_record emp_cp%ROWTYPE;
+BEGIN
+    OPEN emp_cur;
+    FETCH emp_cur INTO emp_record;
+
+    IF emp_cur%FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Cursor found: ' || emp_record.first_name);
+    ELSIF emp_cur%NOTFOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Cursor not found');
+    END IF; -- Added missing END IF
+
+    CLOSE emp_cur; -- Always close your cursors to free memory
+END;
+*/
