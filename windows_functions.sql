@@ -46,7 +46,7 @@ select * , row_number() over(partition by department order by hire_date) from  e
 
 #2. RANK()
 #What it does: Assigns a rank based on the specified order.
-#Ties Handling: If two or more rows share identical values, they receive the same rank.
+# If two or more rows share identical values, they receive the same rank and it skip values.
 
 select *, rank() over(order by salary) from employees;
 
